@@ -1,0 +1,12 @@
+.left{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

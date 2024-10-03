@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+</head>
+<body>
+    <h1>Update Student Information</h1>
+    <form action="/update/<%= student.rollnumber %>" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" name="name" id="name" value="<%= student.name %>" required><br><br>
+        
+        <label for="degree">Degree:</label><br>
+        <input type="text" name="degree" id="degree" value="<%= student.degree %>" required><br><br>
+        
+        <label for="city">City:</label><br>
+        <input type="text" name="city" id="city" value="<%= student.city %>" required><br><br>
+        
+        <button type="submit">Update</button>
+    </form>
+    <br>
+    <a href="/">Go Back</a>
+</body>
+</html>

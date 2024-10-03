@@ -1,0 +1,83 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <title>Student Management System</title>
+ <style>
+        #g1{
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid palevioletred;
+            border-radius: 10px; 
+            background-color:aqua;            
+        }
+        .s1{
+            background-color:lightskyblue;
+        }
+ </style>
+ </head>
+ <body background-image: url(image7.jpg);>
+     <h1>Student Management System</h1>
+     <table  border="2px solid black">
+         <thead>
+             <tr>
+                 <th>Roll No</th>
+                 <th>Name</th>
+                 <th>Degree</th>
+                 <th>City</th>
+                 <th>Action</th>
+             </tr>
+         </thead>
+         <tbody>
+     
+             <% students.forEach((student) => { %>
+             <tr>
+                 <td><%= student.rollnumber %></td>
+                 <td><%= student.name %></td>
+                 <td><%= student.degree %></td>
+                 <td><%= student.city %></td>
+                 <td>
+                     <a href="/update/<%= student.rollnumber %>">Update</a>
+                     <form action="/delete/<%= student.rollnumber %>" method="POST" style="display:inline;">
+                         <button type="submit">Delete</button>
+                     </form>
+                 </td>
+             </tr>
+             <% }) %>
+         </tbody>
+     </table>
+     <br><br>
+     <fieldset id="g1" style="background-color:aqua;">
+        <legend style="color:palevioletred;"><i><h1><b>Data Collection</b></h1></i></legend>
+     <div>
+         <form action="/save" method="post">
+             <div>
+                 <label for="rollnumber">Roll Number:</label><br>
+                 <input type="text" name="rollnumber" id="rollnumber" required>
+             </div><br>
+             <div>
+                 <label for="name">Name:</label><br>
+                 <input type="text" name="name" id="name" required>
+             </div><br>
+ 
+             <div>
+                 <label for="degree">Degree:</label><br>
+                 <input type="text" name="degree" id="degree" required>
+             </div><br>
+ 
+             <div>
+                 <label for="city">City:</label><br>
+                 <input type="text" name="city" id="city" required>
+             </div><br>
+ 
+             <div>
+                <button type="submit"  class="s1" id="s1()" style="width: 50%;height: 30px;">Save </button>
+                 <!-- <button type="submit">Save</button> -->
+             </div>
+         </form>
+         <a href="/">Back to Student List</a>
+     </div>
+    </fieldset>
+ </body>
+ </html>
+ 
